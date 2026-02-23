@@ -1,0 +1,5 @@
+_target_: src.repair_algorithms.wvc_repair_algorithm.WeightedVertexCoverRepairAlgorithm
+_partial_: true
+weight_function_template:
+  _target_: src.repair_algorithms.weight_functions.dynamic_weight_function.DynamicWeightFunction
+  _partial_: true

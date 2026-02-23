@@ -12,7 +12,7 @@ from src.repair_algorithms.weight_functions.weight_function import WeightFunctio
 WeightFunctionTemplate: TypeAlias = Callable[[Dataset, MarginalsConstraints], WeightFunction]
 
 
-class VertexCoverRepairAlgorithm(RepairAlgorithm):
+class WeightedVertexCoverRepairAlgorithm(RepairAlgorithm):
     def __init__(self, weight_function_template: WeightFunctionTemplate, logger: Logger):
         super().__init__(logger)
         self.weight_func_template = weight_function_template

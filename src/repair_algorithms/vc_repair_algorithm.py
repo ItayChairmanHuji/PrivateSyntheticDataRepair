@@ -7,7 +7,7 @@ from src.marginals_obtainers.mcs.marginals_constraints import MarginalsConstrain
 from src.repair_algorithms.repair_algorithm import RepairAlgorithm
 
 
-class RandomVertexCoverRepairAlgorithm(RepairAlgorithm):
+class VertexCoverRepairAlgorithm(RepairAlgorithm):
     def __init__(self, logger: Logger):
         super().__init__(logger)
 
