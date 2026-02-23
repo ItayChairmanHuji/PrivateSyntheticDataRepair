@@ -1,0 +1,5 @@
+_target_: src.synthesizers.smart_noise_synthesizer.SmartNoiseSynthesizer
+_partial_: true
+model_name: aim
+output_size: 10000
+privacy_budget: 10

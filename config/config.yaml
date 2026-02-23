@@ -1,0 +1,9 @@
+defaults:
+  - dataset: adult
+  - synthesizer: file_synthesizer
+  - marginals_obtainer: file_marginals_obtainer
+  - repair_algorithm: vc_repair_algorithm
+  - evaluator: evaluator
+  - logger: wandb_logger
+
+task: run

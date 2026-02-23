@@ -1,0 +1,3 @@
+_target_: src.synthesizers.file_synthesizer.FileSynthesizer
+_partial_: true
+file_path: synthetic_data.csv
