@@ -1,0 +1,6 @@
+_target_: src.loggers.wandb_logger.WANDBLogger
+project_name: <enter project name>
+entity: <enter entity name>
+run_name: <enter run name>
+configuration:
+  dataset: ${dataset.name}
