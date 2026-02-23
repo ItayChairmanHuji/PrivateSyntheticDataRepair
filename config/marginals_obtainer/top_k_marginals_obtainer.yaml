@@ -1,0 +1,13 @@
+_target_: src.marginals_obtainers.top_k_marginals_obtainer.TopKMarginalsObtainer
+_partial_: true
+num_of_marginals: 50
+
+marginals_selector:
+  _target_: src.marginals_obtainers.utils.noisy_marginals_selector.NoisyMarginalsSelector
+  privacy_budget: 10.0
+  utility_function:
+    _target_: src.marginals_obtainers.utility_functions.marginals_distance.MarginalsDistance
+
+marginals_generator:
+  _target_: src.marginals_obtainers.utils.noisy_marginals_generator.NoisyMarginalsGenerator
+  privacy_budget: 40

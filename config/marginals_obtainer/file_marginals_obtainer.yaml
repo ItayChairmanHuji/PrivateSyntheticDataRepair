@@ -1,0 +1,3 @@
+_target_: src.marginals_obtainers.file_marginals_obtainer.FileMarginalsObtainer
+_partial_: true
+file_path: marginals.csv
