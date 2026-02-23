@@ -1,0 +1,21 @@
+_target_: src.evaluators.evaluator.Evaluator
+_partial_: true
+dataset_name: ${dataset.name}
+quality_metrics:
+  dcs_violations:
+    _target_: src.evaluators.quality_metrics.dcs_violations.DCsViolationsQualityMetric
+  deletion_ratio:
+    _target_: src.evaluators.quality_metrics.deletion_ratio.DeletionRatioQualityMetric
+  logistic_regression_accuracy:
+    _target_: src.evaluators.quality_metrics.machine_learning_accuracy.MachineLearningAccuracyQualityMetric
+    model_name: logistic_regression
+  mcs_violations:
+    _target_: src.evaluators.quality_metrics.mcs_violations.MCsViolationsQualityMetric
+  mlp_accuracy:
+    _target_: src.evaluators.quality_metrics.machine_learning_accuracy.MachineLearningAccuracyQualityMetric
+    model_name: mlp
+  random_forest_accuracy:
+    _target_: src.evaluators.quality_metrics.machine_learning_accuracy.MachineLearningAccuracyQualityMetric
+    model_name: random_forest
+  two_way_tvd:
+    _target_: src.evaluators.quality_metrics.two_way_tvd.TwoWayTVDQualityMetric
