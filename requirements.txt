@@ -1,0 +1,14 @@
+duckdb
+gurobipy
+hydra-core
+hydra-joblib-launcher
+igraph
+mbi @ git+https://github.com/ryan112358/private-pgm.git@0edc37b5f72ae22acacd816acd589574178da268
+numpy
+pandas
+private-pgm @ git+https://github.com/ryan112358/private-pgm.git@01f02f17eba440f4e76c1d06fa5ee9eed0bd2bca
+scikit-learn
+scipy
+smartnoise-synth
+wandb
+
