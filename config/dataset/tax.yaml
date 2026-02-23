@@ -1,0 +1,16 @@
+_target_: src.datasets.dataset.Dataset
+name: tax
+path: datasets/tax/private_data.csv
+dcs:
+  _target_: src.datasets.dcs.denial_constraints.DenialConstraints
+  dcs:
+    - _target_: src.datasets.dcs.denial_constraint.DenialConstraint
+      constraint: not(t1.State=t2.State&t1.HasChild=t2.HasChild&t1.ChildExemp!=t2.ChildExemp)
+    - _target_: src.datasets.dcs.denial_constraint.DenialConstraint
+      constraint: not(t1.State=t2.State&t1.MaritalStatus=t2.MaritalStatus&t1.SingleExemp!=t2.SingleExemp)
+    - _target_: src.datasets.dcs.denial_constraint.DenialConstraint
+      constraint: not(t1.State=t2.State&t1.Salary>t2.Salary&t1.Rate<t2.Rate)
+    - _target_: src.datasets.dcs.denial_constraint.DenialConstraint
+      constraint: not(t1.State=t2.State&t1.Salary<t2.Salary&t1.Rate>t2.Rate)
+
+target: Rate

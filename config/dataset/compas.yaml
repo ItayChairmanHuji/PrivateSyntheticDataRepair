@@ -1,0 +1,18 @@
+_target_: src.datasets.dataset.Dataset
+name: compas
+path: datasets/compas/private_data.csv
+dcs:
+  _target_: src.datasets.dcs.denial_constraints.DenialConstraints
+  dcs:
+    - _target_: src.datasets.dcs.denial_constraint.DenialConstraint
+      constraint: not(t1.ScoreText='Low'&t2.ScoreText='High'&t1.DecileScore>t2.DecileScore)
+    - _target_: src.datasets.dcs.denial_constraint.DenialConstraint
+      constraint: not(t1.Scale_ID=t2.Scale_ID&t1.DisplayText!=t2.DisplayText)
+    - _target_: src.datasets.dcs.denial_constraint.DenialConstraint
+      constraint: not(t1.RecSupervisionLevelText='Low'&t2.RecSupervisionLevelText='High'&t1.RecSupervisionLevel>t2.RecSupervisionLevel)
+    - _target_: src.datasets.dcs.denial_constraint.DenialConstraint
+      constraint: not(t1.DisplayText=t2.DisplayText&t1.Scale_ID!=t2.Scale_ID)
+    - _target_: src.datasets.dcs.denial_constraint.DenialConstraint
+      constraint: not(t1.RecSupervisionLevelText=t2.RecSupervisionLevelText&t1.RecSupervisionLevel!=t2.RecSupervisionLevel)
+target: RawScore
+

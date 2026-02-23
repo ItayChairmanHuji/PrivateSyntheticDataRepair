@@ -1,0 +1,14 @@
+_target_: src.datasets.dataset.Dataset
+name: adult
+path: datasets/adult/private_data.csv
+dcs:
+  _target_: src.datasets.dcs.denial_constraints.DenialConstraints
+  dcs:
+    - _target_: src.datasets.dcs.denial_constraint.DenialConstraint
+      constraint: not(t1.education_num != t2.education_num&t1.education=t2.education)
+    - _target_: src.datasets.dcs.denial_constraint.DenialConstraint
+      constraint: not(t1.education_num = t2.education_num&t1.education!=t2.education)
+    - _target_: src.datasets.dcs.denial_constraint.DenialConstraint
+      constraint: not(t1.capital_gain < t2.capital_gain&t1.capital_loss<t2.capital_loss)
+
+target: income
