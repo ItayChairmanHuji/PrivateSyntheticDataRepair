@@ -32,7 +32,7 @@ Statistical Constraints".
 
 ## Usage
 
-The codebase uses Hydra to run experiments.
+The codebase uses [Hydra](https://hydra.cc/docs/intro/) to run experiments.
 The main script is `src/main.py`, and differnt experiments can be run using different configuration files in the
 `config` directory or overriding the default values using the command line arguments in your running script.
 
