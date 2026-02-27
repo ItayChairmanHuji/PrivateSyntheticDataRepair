@@ -55,5 +55,26 @@ Hydra will run the experiment for each dataset. Note that the line `hydra/launch
 makes hydra run the experiments in parallel and limit the number of jobs to 20. This functionality can be disabled by
 removing this line.
 
-Note that this code was used mainly for experiments running and is not a production ready codebase. 
+## Datasets
+
+The paper used the datasets ["Adult"](https://www.kaggle.com/datasets/wenruliu/adult-income-dataset),
+["Census"](https://github.com/socialfoundations/folktables/tree/main),
+["Compas"](https://github.com/propublica/compas-analysis)
+and ["Tax"](https://github.com/mshubhankar/DPMeasures/blob/main/datasets/Tax).
+Due to the size of the datasets and storage constraints, we attach here links for each of the datasets.
+For your convenience, a sample from each of the datasets is attached in `datasets/<dataset_name>/private_data.csv`.
+
+## Run With Your Own Dataset
+
+In order to run the repair process with your own dataset, make sure to do the followings:
+
+1. Create a `<dataset_name>.yaml` file in the `config/dataset` in the same format as done for the other datasets.
+2. Make sure the path for the dataset given in the config file is accessible (note that this path can be overridden in
+   the script, but this is best practice.). The best practice is to place your dataset in the `datasets/<dataset_name>`
+   folder.
+3. When running the script, make sure that you use the config of your dataset and not overriding it (i.e make sure that
+   in the script `dataset=<your_dataset>` and not something else and also make sure that any other attribute in the
+   dataset is not overridden for example `dataset.path=<your_dataset_path>` if you want to override the default path.).
+
+Note that this code was used mainly for experiments running and is not a production ready codebase.
 For farther support, please contact itay.chairman@mail.huji.ac.il
